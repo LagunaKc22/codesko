@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="sec-1 show-animate">
+        <h1 class="animate">Hi I am KC</h1>
+        <p class="animate">Animation on scroll using HTML, CSS and JavaScript</p>
+    </section>
+    <section class="sec-2">
+        <h1 class="animate">Keep Scrolling</h1>
+        <p class="animate">Animation on scroll using HTML, CSS and JavaScript</p>
+    </section>
+    <section class="sec-3">
+        <h1 class="animate">Nice!!!</h1>
+        <p class="animate">Animation on scroll using HTML, CSS and JavaScript</p>
+    </section>
+    <section class="sec-4">
+        <h1 class="animate">Very Good!</h1>
+        <p class="animate">Animation on scroll using HTML, CSS and JavaScript</p>
+    </section>
+    <section class="sec-5">
+        <div class="images show-animate">
+            <img src="img/toji.webp" class = "t" alt="">
+            <img src="img/gojo.webp" class = "g" alt="">
+            <img src="img/yuta.webp" class = "y" alt="">
+        </div>
+    </section>
+    <script>
+        let sections = document.querySelectorAll('section');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150 ;
+                let height = sec.offsetHeight;
+                if (top >= offset && top < offset + height){
+                    sec.classList.add('show-animate');
+                    // sec.classList.add('show');
+                }else{
+                    sec.classList.remove('show-animate');
+                    // sec.classList.remove('show');
+
+                }
+            })
+        }
+    </script>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    section{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #ef4f1d;
+    }
+    h1{
+        font-size:90px;
+        color:#fff;
+    }
+    p{
+        font-size: 35px;
+        color: #18191a;
+    }
+
+    section .animate{
+    transition: 1s all;
+    }
+
+    .sec-1 .animate{
+        transform: translate(-100%);
+    }
+    .sec-1.show-animate .animate{
+        transform: translate(0);
+    }
+    .sec-2 .animate{
+        transform: translate(100%);
+    }
+    .sec-2.show-animate .animate{
+        transform: translate(0);
+    }
+    .sec-3 .animate{
+        transform: translateY(100%);
+    }
+    .sec-3.show-animate .animate{
+        transform: translateY(0);
+    }
+    .sec-4 .animate{
+        transform: scale(.7);
+    }
+    .sec-4.show-animate .animate{
+        transform: scale(1);
+    }
+    .sec-5 .images img.g{
+        transform: scale(.7);
+    }
+    .sec-5 .images img.t{
+        /* transform:rotate(360deg); */
+        transform:skewX(34deg);
+    }
+    .sec-5 .images img.y{
+        /* transform:rotate(360deg); */
+        transform:skewX(-34deg);
+    }
+    .sec-5.show-animate .images img.t{
+        /* transform:rotate(-360deg); */
+        transform:skewX(0deg);
+    }
+    .sec-5.show-animate .images img.g{
+        transform: scale(1);
+    }
+    .sec-5.show-animate .images img.y{
+        transform:skewX(0);
+    }
+    
+  
+    .sec-2 p{
+        color: #06cc09;
+    }
+    .sec-3 p{
+        color: #ccb806;
+    }
+    .sec-4 p{
+        color: #c3126b;
+    }
+    .sec-5 .images img{
+        transition: 1s;
+    }
+    .sec-5 .images img{
+        max-width: 400px;
+        height: 400px;
+        margin: 0px 10px;
+    }
+</style>

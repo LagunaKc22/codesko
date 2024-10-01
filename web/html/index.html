@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container"><img src="img/paws2.png" alt=""><p>PAWS ADOPT</p></div>
+            <div id="link" class="link-container">
+                <ul>
+                    <li>About</li>
+                    <li>Our Dogs</li>
+                    <li>Location</li>
+                    <li><button id="dopt">ADOPT NOW</button></li>
+                </ul>
+               
+            </div>
+            <button id="bb" class="expand">=</button>
+
+        </header>
+
+        
+        <div class="sec-1">
+            <div class="text-sec">
+                <h1 id="text">Where Hearts and Paws Unite</h1>
+                <p>With a commitment to responsible adoption, we ensure each dog finds a loving family to share a life time joy, laughter, and tail-wagging moments.</p>
+                <button id="now">ADOPT NOW</button>
+            </div>
+
+            <div class="img-dog">
+            </div>
+        
+        </div>
+        <div class="sec-2">
+
+        </div>
+      
+    </div>
+    <div id="box" class="box"></div>
+    <button id="btn">Button</button>
+
+    <style>
+        .box{
+            width: 30px;
+            height: 90px;
+            background: green;
+        }
+    </style>
+
+
+</body>
+</html>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .box, #btn{
+        display: none;
+    }
+    .container{
+        height: 100vh;
+    }
+    
+    .logo-container{
+        /* border: 1px solid green; */
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: auto;
+        width: 20%;
+        /* background: green; */
+    }
+    .logo-container img{
+        height: 40px;
+        width: auto;
+        margin-right:10px;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 150px;
+        line-height: 50px;
+    }
+    .expand{
+      opacity: 0;
+      position: absolute;
+    }
+    .link-container ul{
+        display: flex;
+        align-items: center;
+        gap: 60px
+        
+    }
+    .link-container ul li{
+        list-style: none;
+        font-weight: bold;
+        /* margin-right: 30px;
+        margin-left: 30px; */
+    }
+    .link-container ul li button{
+        background: rgb(247, 104, 52);
+        border: none;
+        border-radius: 20px;
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+    /* /////////////////////////////////// */
+    .sec-2{
+        height: 100vh;
+        background: #000;
+    }
+    .sec-1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 150px;
+        height: 90%;
+        /* border: 1px solid; */
+    }
+    .text-sec{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid; */
+        width: 60%;
+        overflow: hidden;
+        /* padding: 12px; */
+    }
+    .text-sec h1{
+        font-size: 70px;
+        font-weight: bold;
+        margin-right: 30%;
+        line-height: 60px;
+    }
+    /* .text-sec p::first-letter{
+        color: orangered;
+        font-weight: bold;
+        font-size: 50px;
+         text-shadow: 5px 5px 3px #080808; 
+    } */
+    .text-sec p{
+        font-size: 20px;
+        margin-top: 2%;
+        margin-right: 28%;
+        text-align: left;
+    }
+    .text-sec button{
+        background: rgb(247, 104, 52);
+        border: none;
+        margin-top: 3%;
+        border-radius: 20px;
+        color: white;
+        padding: 13px 20px;
+        font-weight: bold;
+        width: 20%;
+    }
+
+    .img-dog{
+        
+        position: relative;
+        top: 65px;
+        /* bottom: 90px; */
+        background: url(img/dog.png);
+        /* background-clip: border-box; */
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 35%;
+        height: 80%;
+        /* border: 1px solid; */
+
+    }
+@media only screen and (max-width: 768px) {
+    .expand{
+        display:hidden;
+    }
+    .box, #btn{
+        display: none;
+    }
+    .container{
+        /* background: green; */
+    }
+}
+/* @media only screen and (max-width: 767px){ */
+@media (min-width: 320px) and (max-width: 500px) {
+    .container{
+        /* background: rgb(113, 113, 251); */
+    }
+
+    .box, #btn{
+        display: block;
+    }
+    .logo-container{
+        /* border: 1px solid green; */
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: auto;
+        width: 50%;
+        /* background: green; */
+    }
+    .logo-container img{
+        height: 30px;
+        /* width: auto; */
+        /* margin-right:10px; */
+    }
+    .logo-container p{
+       font-size: 14px;
+    }
+    .expand{
+        opacity: 1;
+        position: relative;
+        border: 2px solid black;
+        color: currentColor;
+        background: transparent;
+        padding: 5px 20px 11px 20px;
+        text-align: center;
+        width:max-content;
+        border-radius: 6px;
+    }
+    /* .expand::before{
+        content: "=";
+        position: absolute;
+        color: currentColor;
+        top:32%;
+        width: 1px;
+    } */
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 20px;
+        line-height: 50px;
+        /* background: green; */
+        
+    }
+    .link-container{
+        display: none;
+        /* align-items: center;
+        gap: 60px */   
+    }
+    .sec-1{
+        /* border: 1px solid #; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+       margin: 0px 20px;
+        height: 90%;
+        /* border: 1px solid; */
+    }
+    .text-sec{
+        position: relative;
+        top: -140px;
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid; */
+        /* justify-content: space-around; */
+        /* width: 10%; */
+        overflow: hidden;
+        /* padding: 12px; */
+        width: 100%;
+    }
+    .text-sec h1{
+      
+        font-size: 49px;
+        font-weight: bold;
+        /* margin-right: 30%; */
+        line-height: 40px;
+        width: 100%;
+    }
+    .text-sec p{
+        font-size: 20px;
+        width: 100%;
+        /* margin-top: 2%; */
+        /* margin-right: 28%; */
+        /* text-align: left; */
+    }
+    .img-dog{
+        position: relative;
+        top: -140px;
+        /* bottom: 90px; */
+        background: url(img/dog.png);
+        /* background-clip: border-box; */
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 35%;
+        /* border: 1px solid; */
+
+    }
+    .text-sec button{
+        background: rgb(247, 104, 52);
+        border: none;
+        margin-top: 3%;
+        border-radius: 20px;
+        color: white;
+        padding: 13px 20px;
+        font-weight: bold;
+        width: 40%;
+    }
+
+}
+</style>

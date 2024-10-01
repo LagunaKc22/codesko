@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="sidebar" id="side">
+                <ul class="side-link">
+            
+                    <li class="link btn" >
+                        <button id="btn-hidden" onclick="minimize()">Minimize</button>
+                        <button id="btn-hidden2" onclick="maximize()">Maximize</button>
+                        <button id="btn2" value="1" onclick="y()">Click Me</button>
+                    </li>
+                    <li class="link">Home</li>
+                    <li class="link">Profile</li>
+                    <li class="link">Settings</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1 id="hw" >Welcome to My Website</h1>
+          
+                <p >This is a simple website created using HTML, CSS, and JavaScript. It includes a sidebar with navigation links and a content section.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function y(){
+            var x = document.getElementById("btn2").getAttribute("value");
+            document.getElementById("hw").innerHTML = x;
+
+            
+            // x = 1;
+            if(x == 1){
+                x = x - 1;
+                document.getElementById("btn2").innerHTML = "hello world";
+               
+                document.getElementById("hw").innerHTML = x;
+            }else{
+                x = x + 1;
+                document.getElementById("btn2").innerHTML = "Kupal";
+
+                document.getElementById("hw").innerHTML = x;
+            }
+        
+        }
+        function minimize(){
+           document.getElementById("side").style.width="10px";
+           document.getElementById("side").style.transition="all 0.2s";
+            document.getElementById("btn-hidden").style.visibility="hidden";
+            document.getElementById("btn-hidden2").style.visibility="visible";
+        }
+        function maximize(){
+            document.getElementById("side").style.width="10%";
+            document.getElementById("btn-hidden").style.visibility="visible";
+            document.getElementById("btn-hidden2").style.visibility="hidden";
+        }
+
+
+        function p(){
+           var person = {name: "John", age:24, gender:"Bayot", personality: "kupal"};
+           y = person.langunge = "English";
+
+           document.getElementById("hw").innerHTML = person.name + " " + person.langunge;
+
+           return person;
+
+           
+        }
+            
+        var x = p();
+
+        
+         alert("My Name is "+ x.name + ", " + x.age + " Years old, my personality is " + x.personality + y);
+
+        
+        
+
+
+
+
+            // alert(person.name + " is now " + person.age + " and he is " + person.personality);
+    
+
+      
+            
+function time(){
+    document.getElementById("t").innerHTML = "Kupal";
+}
+function me(){
+    document.getElementById("").innerHTML = Date();
+}
+
+
+
+    </script>
+    <button id = "b" onclick="document.getElementById('b').innerHTML = 'kupa greg'" onkeypress>Kupal Reveal</button>
+    
+    <!-- onclick="document.getElementById('b').innerHTML =Date()" -->
+
+
+    <button id = "y" onclick="this.innerHTML=Date()">HOy</button>
+    <button id="t"  onmouseout="me()" onmouseover="time()" >Display time</button>
+    <button id="u" onmouseout="me()" >Display time over</button>
+</body>
+</html>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        display: flex;
+        height: 100vh;
+
+    }
+    .btn{
+        float: right;
+    }
+    .sidebar{
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-right: 30px;
+        width: 10%;
+        border: 1px solid green;
+        background: #000;
+        color: white;
+    }
+    #btn-hidden2{
+        visibility: hidden;
+    }
+    li{
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+    button{
+        padding: 10px;
+        font-weight: bold;
+    }
+</style>

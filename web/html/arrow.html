@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <!-- <div class="stopwatch">
+        <div id="display">00:00:00</div>
+        <button id="alt-btns">Start</button>
+        <button id="reset">Reset</button>
+      </div> -->
+
+      <!-- <div id="display">00:00:00</div>
+      <button id="btn">Start</button>
+      <button id="reset">reset</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="display">00:00:00</div>
+      <button id ="btn">Start</button>
+      <button id ="reset">Reset</button>
+<br><br>
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      
+      <br>
+      <button onclick="move()">Click Me</button> 
+      
+    <style>
+        #myProgress {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background-color: #ddd;
+}
+
+#myBar {
+  background-color: #4CAF50;
+  width: 10px;
+  height: 30px;
+  position: absolute;
+}
+    </style>
+
+<br><br>
+<input type="text" id="txt">
+<br><br>
+<button onclick="openWin()">Open "myWindow"</button>
+
+
+
+  <script>
+
+function openWin() {
+  const myWindow = window.open("", "", "width=200, height=100");
+  setTimeout(function() {myWindow.close()}, 3000);
+}
+
+
+let x = document.getElementById("txt");
+setTimeout(function(){ x.value="1 seconds" }, 1000);
+setTimeout(function(){ x.value="2 seconds" }, 2000);
+setTimeout(function(){ x.value="3 seconds" }, 3000);
+
+
+
+
+
+function move() {
+  const element = document.getElementById("myBar");   
+  let width = 0;
+  const id = setInterval(frame, 20);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      element.style.width = width + '%'; 
+    }
+  }
+}
+
+
+
+
+
+
+      let time = 0;
+      let interval;
+      let display = document.getElementById("display");
+      let btn = document.getElementById("btn");
+      let reset = document.getElementById("reset");
+      
+      function start(){
+          btn.innerHTML = "Stop";
+          if(interval){
+              clearInterval(interval);
+              interval = null;
+          }
+          interval = setInterval(()=>{
+              time += 1;
+              display.innerHTML = 
+              Math.floor(time / 3600).toString().padStart(2, "0") + ":" + Math.floor((time % 3600) / 60).toString().padStart(2, "0") + ":" + Math.floor((time % 60)).toString().padStart(2, "0")
+          }, 1000);
+      }	
+          
+      function stop(){
+          btn.innerHTML = "Start";
+          if(interval){
+              clearInterval(interval);
+              interval = null;
+          }
+      }
+  
+      btn.onclick = function(){
+          if(interval){
+              stop();
+          }else{
+              start();
+          }
+      }
+      
+      reset.onclick = function(){
+          btn.innerHTML = "Start";
+          if(interval){
+              clearInterval(interval);
+          }
+          interval = null;
+          time = 0;
+          display.innerHTML = "00:00:00";
+      }
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //    let time = 0;
+        //    let interval;
+           
+        //    let display = document.getElementById("display");
+        //    let btn = document.getElementById("btn");
+        //    let reset = document.getElementById("reset");
+
+
+        //    function start() {
+        //     btn.innerHTML = "Stop";
+
+        //     if(interval){
+        //         clearInterval(in terval);
+        //     }
+        //     interval = setInterval(()=> {
+        //         time += 1 
+        //         display.innerHTML = 
+        //         Math.floor(time / 3600).toString().padStart(2, "0") + ":" + Math.floor((time % 3600) / 60).toString().padStart(2, "0") + ":" + Math.floor((time % 60)).toString().padStart(2, "0")
+        //     }, 1000);
+        //    }
+
+        //    function stop(){
+        //         btn.innerHTML = "Start";
+        //         clearInterval(interval);
+        //         interval = null;
+        //    }
+
+        //    btn.onclick = function(){
+        //     if(interval){
+        //         stop();
+        //     }else{
+        //         start();
+        //     }
+        //    }
+
+        //    reset.onclick = function(){
+        //     btn.innerHTML = "Start";
+        //     if(interval){
+        //         clearInterval(interval);
+                
+        //     }
+        //     interval = null;
+        //     time = 0;
+        //     display.innerHTML = "00:00:00";
+
+        //    }
+
+
+        //    resetBtn.onclick = function(){
+//   altBtns.innerHTML = "Start"
+//   if(interval){
+//     clearInterval(interval);
+//   }
+//   interval = null;
+//   time = 0;
+//   display.innerHTML = "00:00:00";
+// }
+
+
+
+
+
+
+
+
+
+//        var time = 0;
+// var interval;
+// var display = document.getElementById("display");
+// var altBtns = document.getElementById("alt-btns");
+// var resetBtn = document.getElementById("reset");
+
+// //Start button click
+// function startTimer() {
+//     altBtns.innerHTML = "Stop"
+//     if(interval){
+//       clearInterval(interval);
+//     }
+
+//     interval = setInterval(() => { 
+//       time += 1
+//       display.innerHTML = 
+//         Math.floor(time / 3600).toString().padStart(2, "0") + ":" + Math.floor((time % 3600) / 60).toString().padStart(2, "0") + ":" + Math.floor((time % 60)).toString().padStart(2, "0")
+//     }, 1000);
+// }
+
+// function stopTimer() {
+//   altBtns.innerHTML = "Start"
+//   clearInterval(interval);
+//   interval = null;
+// }
+
+// altBtns.onclick = function(){
+//   if(interval){
+//     stopTimer();
+//   } else {
+//     startTimer();
+//   }
+// }
+
+// resetBtn.onclick = function(){
+//   altBtns.innerHTML = "Start"
+//   if(interval){
+//     clearInterval(interval);
+//   }
+//   interval = null;
+//   time = 0;
+//   display.innerHTML = "00:00:00";
+// }
+
+
+        // setInterval(start, 1000);
+        // function start() {
+        //     let time = new Date();
+        //     let s = time.getSeconds();
+
+        //     document.getElementById("demo").innerHTML= s.toString();
+        // }
+        // document.getElementById("start").addEventListener("click", start);
+
+        // setInterval(myTime, 1000);
+
+        // function myTime() {
+        //     let date = new Date();
+        //     let h = date.getHours();
+        //     let m = date.getMinutes();
+        //     let s = date.getSeconds();
+
+        //     document.getElementById("demo").innerHTML = h.toString() + " : " + m.toString() + " : " + s.toString();
+        // }
+
+    
+
+
+        // let name = prompt('Enter your name:');
+        // let age = prompt('Enter your age:');
+        // // age = Number(age);
+
+        // msg = (name, age) => "Happy Birthday " + name + " and you are now " + age + " years old";
+
+        // document.getElementById("demo").innerHTML = msg(name,age);
+
+        // let hello = "";
+        // hello = () => {
+        //     return "Happy Birthday";
+        // }
+
+        // document.getElementById("demo").innerHTML = hello();
+
+
+        // let hotdog;
+
+        // hotdog = () => "Chicken dog";
+
+        // document.getElementById("demo").innerHTML = hotdog();
+
+        // let myFunction = (a, b) => a * b;
+        // document.getElementById("demo").innerHTML =  myFunction(4, 5);
+
+        
+
+        // let hllo = "";
+
+        // hello = () => "Happy birthday";
+        // document.getElementById("demo").innerHTML = hello();/
+    </script>
+</body>
+</html>

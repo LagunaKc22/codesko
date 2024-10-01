@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/container-1.css">
+    <link rel="stylesheet" href="css/img.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">logo</div>
+
+  
+</nav>
+    <div class="container-1" id="hero">
+       <div class="introduction">
+        <p>KC PHILIP LAGUNA</p>
+        <p>Jr. Web developer</p>
+        
+       </div>
+       <div class="image-container">
+        <div class="pogi"></div>
+       </div>
+    </div>
+
+    <div class="container" id="about">
+       <p id="p">Hi, I'm [Your Name], a Junior Web Developer with a strong passion for creating beautiful and functional websites. My expertise leans towards front-end development, where I thrive in crafting engaging user experiences. While front-end is my preferred area, I'm also capable of handling back-end tasks when needed. Whether working independently or as part of a team, I enjoy contributing to projects, especially when I can focus on the front-end side of things. I'm excited to bring creativity and technical skill to every project I undertake.</p>
+
+       <button onclick="kupal()">Click me</button>
+        </div>
+    </div>
+
+ <script>
+    function kupal(){
+        document.getElementById("p").innerHTML="Kupal";
+        document.getElementById("p").style.backgroundColor="yellow";
+        document.getElementById("p").style.fontSize="24px";
+        document.getElementById("p").style.border="2px solid black";
+        document.getElementById("p").style.padding="10px";
+        document.getElementById("p").style.color="black";
+        // document.getElementById("p").style.cursor="pointer";
+        document.getElementById("p").style.transition="all 1s";
+        document.getElementById("p").style.textShadow="2px 2px 4px rgba(0,0,0,0.5)";
+        document.getElementById("p").style.borderRadius="5px";
+        document.getElementById("p").style.boxShadow="0 0 10px rgba(0,0,0,0.3)";
+        document.getElementById("p").style.fontFamily="Arial, sans-serif";
+        document.getElementById("p").style.fontWeight="bold";
+        document.getElementById("p").style.letterSpacing="1px";
+        document.getElementById("p").style.textTransform="uppercase";
+        document.getElementById("p").style.textAlign="center";
+        document.getElementById("p").style.marginTop="50px";
+        document.getElementById("p").style.marginRight="45%";
+        document.getElementById("p").style.marginLeft="45%";
+        document.getElementById("p").style.position="fixed";
+        document.getElementById("p").style.zIndex="1000";
+        document.getElementById("p").style.display="flex";
+        document.getElementById("p").style.justifyContent="center";
+        document.getElementById("p").style.alignItems="center";
+        // document.getElementById("p").style.display="flex";
+        // document.getElementById("p").style.display="inline";
+        // document.getElementById("p").style.display="none";
+        // document.getElementById("p").style.display="block";
+        // document.getElementById("p").style.display="inline-block";
+        
+    }
+ 
+ </script>
+ <style>
+    button{
+        color: black;
+    }
+ </style>
+</body>
+</html>
+

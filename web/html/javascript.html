@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .boxes{
+        display: flex;
+     
+    }
+    .b-1, .b-2, .b-3, .b-4{
+        
+        width: 100px;
+        height: 100px;
+      
+        transition: transform 0.5s ease-in-out;
+    }
+    .b-1{
+        position:relative;
+        right: -150px;
+        background: rgb(255, 157, 0);
+        z-index: 100;
+    }
+    .b-2{
+        z-index: 0;
+        position:relative;
+        left: 50px;
+        background: rgb(232, 17, 207);
+    }
+    .b-3{
+        z-index: 0;
+        position:relative;
+        right: 50px;
+        top: 0px;
+        background: rgb(85, 17, 232);
+    }
+    .b-4{
+        z-index: 0;
+        position:relative;
+        left: -150px;
+        bottom: 0px;
+        background: rgb(207, 232, 17);
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 id="arr">Display Here</h2>
+        <h3 class="box" id="box"></h3>
+
+      
+    
+        <!-- <button id ="btn" onclick="myFunction()">Click Me!</button> -->
+
+
+        <!-- <button id="mul">Click Count!</button> -->
+       
+        <button id="ch" onclick="color()">click to change color</button>
+        <h3 class="box2" id="box2"></h3>
+       <button id="btn-box" onclick="expand()">Click to expand</button>
+        <h3 class="box3" id="box3"></h3>
+       <button id="btn-box3" onclick="rotate()">Click to expand</button>
+       <br>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <div class="boxes">
+        <div class="b-1" id="b-1" ></div>
+        <div class="b-2" id="b-2" ></div>
+        <div class="b-3" id="b-3"></div>
+        <div class="b-4" id="b-4"></div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <button id="btn-x" onclick="scatter()">Scatter</button>
+
+    </div>
+       
+    <script>
+        function scatter(){
+            const b1 = document.getElementById("b-1");
+            const b2 = document.getElementById("b-2");
+            const b3 = document.getElementById("b-3");
+            const b4 = document.getElementById("b-4");
+
+            if(b1.style.right === "-150px" && b2.style.left === "50px" && b3.style.top === "0px" && b4.style.bottom ===  "0px"){
+        
+
+                b1.style.right = "-250px";
+                b2.style.left = "-50px";
+                b3.style.top = "-100px";
+                b4.style.bottom = "-100px";
+               
+                b1.style.rotate = "-315deg";
+                b2.style.rotate = "405deg";
+                b3.style.rotate = "-405deg";
+                b4.style.rotate = "315deg";
+                b1.style.transition = "0.5s ease";
+                b2.style.transition = "0.5s ease";
+                b3.style.transition = "0.5s ease";
+                b4.style.transition = "0.5s ease";
+           
+               
+ 
+            }else{
+         
+                b1.style.right = "-150px";
+                b2.style.left = "50px";
+                b3.style.top = "0px";
+                b4.style.bottom = "0px";
+                b1.style.borderRadius = "0";
+                b2.style.borderRadius = "0";
+                b3.style.borderRadius = "0";
+                b4.style.borderRadius = "0";
+                b1.style.rotate = "360deg";
+                b2.style.rotate = "-360deg";
+                b3.style.rotate = "360deg";
+                b4.style.rotate = "-360deg";
+                b1.style.transition = "0.5s ease";
+                b2.style.transition = "0.5s ease";
+                b3.style.transition = "0.5s ease";
+                b4.style.transition = "0.5s ease";
+             
+
+                
+            }
+            btn.document.getElementById("btn-x").addEventListener("click", scatter);
+
+        }
+        function rotate(){
+        const box = document.getElementById("box3")
+
+            if(box.style.rotate === "360deg"){
+                box.style.rotate = '-360deg';
+                box.style.background = 'blue';
+                box.style.borderRadius = '100px';
+                // box.style.rotate = "360deg";
+                box.innerHTML = "--->";
+                box.style.transition = "2s ease";
+            }else{
+                box.style.rotate = "360deg";
+                box.style.borderRadius = '0px';
+                box.style.background = 'red';
+                box.style.borderRight = "30px solid purple";
+                box.style.borderLeft = "30px solid green";
+                box.style.borderTop = "30px solid skyblue";
+                box.style.borderBottom = "30px solid white";
+                
+                // box.style.border = "10px solid yellow";
+                box.style.rotate = "360deg";
+                box.style.transition = "2s ease";
+                box.innerHTML = "<---";
+            }
+
+        btn.document.getElementById("btn-box3").addEventListener("click", rotate);
+        }
+
+
+        function color(){
+        const box = document.getElementById('box');
+        
+        
+        
+        if (box.style.background === 'blue'){
+            box.style.background = 'red';
+            box.style.rotate = "360deg";
+            box.style.transition = "2s ease";
+        }else{
+            box.style.transition = "2s ease";
+            box.style.background = 'blue';
+            box.style.rotate = "-360deg";
+        }
+       
+       btn.document.getElementById("ch").addEventListener("click");
+        
+
+     
+     
+        }
+  
+        function expand(){
+        const box2 = document.getElementById('box2');
+       
+
+        if(box2.style.width === "60px"){
+            box2.style.width = '30px';
+            box2.style.transition = "0.5s ease";
+        }else{
+            box2.style.width = '60px';
+            box2.style.transition = "0.5s ease";
+        }
+     
+        btn.document.getElementById("btn-box").addEventListener("click", expand);
+       
+       
+                }
+
+     
+        
+     
+
+
+
+        function myFunction(){
+            let car = ["a", "b", "c", "d", "e"];
+            document.getElementById("arr").innerHTML = car[0]+" Kupal "+ car[3];
+            document.getElementById("arr").style.color = "White";
+            document.getElementById("arr").style.background = "Green";
+            document.getElementById("arr").style.padding = "20px";
+            document.getElementById("arr").style.transition = "0.5s all";
+            document.getElementById("btn").style.transition = "0.7s all";
+            document.getElementById("btn").style.boxShadow = "3px 4px 2px 3px green";
+        }
+
+       
+        let count = 0;
+
+        document.getElementById("mul").addEventListener("click", function(){
+            count++;
+            document.getElementById("arr").innerHTML = count;
+        });
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let count = 0;
+        // document.getElementById("mul").addEventListener("click", function(){
+        //     count++;
+            
+        //     document.getElementById("arr").innerHTML = "Clicked "+ count + " times";
+        // });
+
+    </script>
+
+    <style>
+         .box3{
+            background: #7f5403;
+            height: 100px;
+            width: 100px;
+            rotate: 0deg;
+         }
+        .box2{
+            background: #607f03;
+            height: 100px;
+            width: 30px;
+
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #210166;
+            gap:12px;
+            padding: 15px;
+            color: white;
+
+        }
+        .box{
+            height: 20px;
+            width: 20px;
+            background: red;
+        }
+        button{
+            padding: 10px 40px;
+            border-radius: 12px;
+            border: 0;
+            background: orange;;
+        }
+    </style>
+</body>
+</html>

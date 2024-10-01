@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <!-- <div class="container">
+        <section class="sec-0 show-animate">
+            
+            <h1>KC LAGUNA</h1>
+            <span class="animate"><img src="img/pg.png" alt=""></span>
+            <p>Front End Web Developer</p>
+
+
+
+        </section>
+        <section class="sec-1 show-animate">
+            
+            <h1 class="animate name" >KC LAGUNA</h1>
+            <span class="animate bg"><img src="img/pg.png" alt=""></span>
+            <p class="animate title">Front End Web Developer</p>
+
+
+
+        </section>
+        <section class="sec-2">
+            <h1>KC LAGUNA</h1>
+            <p>Front End Web Developer</p>
+        </section>
+        <section class="sec-3">
+            <h1>KC LAGUNA</h1>
+            <p>Front End Web Developer</p>
+        </section>
+        <section class="sec-4">
+            <h1>KC LAGUNA</h1>
+            <p>Front End Web Developer</p>
+        </section>
+    </div> -->
+
+    <!-- <style>
+        .tbox{
+            height: 100px;
+            width: 100px;
+           background: orange;
+           transition: 2.5s linear;
+            /* animation-name: change;
+            animation-duration: 4s;
+            animation-iteration-count: infinite; */
+            /* animation-direction: alternate;   */
+            /* animation-direction: alternate-reverse;   */
+            animation: myfirst 5s linear 2s infinite alternate;
+        }
+        @keyframes myfirst {
+            /* from { background:green;} */
+            /* to { background: red;}; */
+            0%   {background-color: orange; rotate: 90deg;}
+            25%  {background-color: yellow;rotate: 140deg;}
+            50%  {background-color: blue; rotate: 180eg;}
+            100% {background-color: green; rotate: 71deg; transition: 0.5s linear;}
+        }
+    </style>
+    <div class="tbox">
+
+    </div>
+
+   
+</div>
+<a href="https://www.google.com/" class="link">Go to Google</a>
+    <div>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+      </div>
+      
+      <p>Paragraph 3. After a div.</p>
+      <p>Paragraph 4. After a div.</p>
+      
+      <div>
+        <p>Paragraph 5 in the div.</p>
+        <p>Paragraph 6 in the div.</p>
+      </div>
+      
+      <p>Paragraph 7. After a div.</p>
+      <p>Paragraph 8. After a div.</p>
+ -->
+
+
+    <script>
+        
+        let sections = document.querySelectorAll('section');
+        window.onscroll = () =>{
+            sections.forEach(sec =>{
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                if(top >=offset && top < offset + height){
+                    sec.classList.add('show-animate');
+                    
+                }else{
+                    sec.classList.remove('show-animate');
+                }
+            })
+        }
+    </script>
+</body>
+</html>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+section .animate {
+    transition: 1s;
+}
+.container{
+    
+}
+section{
+    
+    min-height: 100vh;
+    /* border: 1px solid green; */
+    background: url(img/bg.jpg);
+}
+section.sec-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+section.sec-1 h1{
+   font-size: 150px;
+   /* transform: translatey(150px); */
+   position: relative;
+   top: 160px;
+   
+}
+section.sec-1 p{
+   font-size: 50px;
+}
+section.sec-1 span img{
+    width: 400px;
+    position: relative;
+}
+
+
+
+/* animation*/
+.sec-1 h1.animate.name{
+    transform: translateX(-1000px);
+}
+.sec-1.show-animate h1.animate.name{
+    transform: translateX(0);
+}
+.sec-1 .animate.bg{
+    transform: translateY(-100px);
+    filter: blur(10px);
+}
+.sec-1.show-animate .animate.bg{
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+</style>

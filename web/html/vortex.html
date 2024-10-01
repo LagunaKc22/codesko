@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter Example</title>
+   <style>
+    
+    .boxes{
+        display: flex;
+     
+    }
+    .b-1, .b-2, .b-3, .b-4{
+        
+        width: 100px;
+        height: 100px;
+      
+        transition: transform 0.5s ease-in-out;
+    }
+    .b-1{
+        rotate: 0;
+        position:relative;
+        right: -150px;
+        background: rgb(255, 157, 0);
+        z-index: 100;
+    }
+    .b-2{
+        rotate: 0;
+        z-index: 0;
+        position:relative;
+        left: 50px;
+        background: rgb(232, 17, 207);
+    }
+    .b-3{
+        rotate: 0;
+        z-index: 0;
+        position:relative;
+        right: 50px;
+        top: 0px;
+        background: rgb(85, 17, 232);
+    }
+    .b-4{
+        rotate: 0;
+        z-index: 0;
+        position:relative;
+        left: -150px;
+        bottom: 0px;
+        background: rgb(207, 232, 17);
+    }
+   </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="b-1" id="b-1"></div>
+        <div class="b-2" id="b-2"></div>
+        <div class="b-3" id="b-3"></div>
+        <div class="b-4" id="b-4"></div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button id="btn-x">Scatter</button>
+
+    <script>
+        function scatter() {
+            const b1 = document.getElementById("b-1");
+            const b2 = document.getElementById("b-2");
+            const b3 = document.getElementById("b-3");
+            const b4 = document.getElementById("b-4");
+
+            if (b1.style.right === "-250px") {
+                b1.style.right = "-150px";
+                b2.style.left = "50px";
+                b3.style.top = "0px";
+                b4.style.bottom = "0px";
+
+                b1.style.transform = "rotate(-315deg)";
+                b2.style.transform = "rotate(405deg)";
+                b3.style.transform = "rotate(-405deg)";
+                b4.style.transform = "rotate(315deg)";
+                b1.style.transition = "0.5s ease";
+                b2.style.transition = "0.5s ease";
+                b3.style.transition = "0.5s ease";
+                b4.style.transition = "0.5s ease";
+            } else {
+           
+
+                b1.style.right = "-250px";
+                b2.style.left = "-50px";
+                b3.style.top = "-100px";
+                b4.style.bottom = "-100px";
+
+                b1.style.borderRadius = "0";
+                b2.style.borderRadius = "0";
+                b3.style.borderRadius = "0";
+                b4.style.borderRadius = "0";
+
+                b1.style.transform = "rotate(360deg)";
+                b2.style.transform = "rotate(-360deg)";
+                b3.style.transform = "rotate(360deg)";
+                b4.style.transform = "rotate(-360deg)";
+                b1.style.transition = "0.5s ease";
+                b2.style.transition = "0.5s ease";
+                b3.style.transition = "0.5s ease";
+                b4.style.transition = "0.5s ease";
+            }
+        }
+
+        document.getElementById("btn-x").addEventListener("click", scatter);
+    </script>
+</body>
+</html>

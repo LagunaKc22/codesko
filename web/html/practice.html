@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .boxes{
+        display: flex;
+     
+    }
+    .b-1, .b-2, .b-3, .b-4{
+        
+        width: 100px;
+        height: 100px;
+      
+        transition: transform 0.5s ease-in-out;
+    }
+    .b-1{
+        position:relative;
+        right: -150px;
+        background: white;
+        z-index: 100;
+    }
+    .b-2{
+        z-index: 0;
+        position:relative;
+        left: 50px;
+        background: rgb(232, 17, 207);
+    }
+    .b-3{
+        z-index: 0;
+        position:relative;
+        right: 50px;
+        top: 0px;
+        background: rgb(85, 17, 232);
+    }
+    .b-4{
+        z-index: 0;
+        position:relative;
+        left: -150px;
+        bottom: 0px;
+        background: rgb(207, 232, 17);
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 id="arr">Display Here</h2>
+        
+       <div class="boxes">
+        <div class="b-1" id="bo-1"></div>
+        <div class="b-2" id="bo-2"></div>
+        <div class="b-3" id="bo-3"></div>
+        <div class="b-4" id="bo-4"></div>
+      
+    </div>
+    <br><br><br><br><br>
+    <button id="x">Click me to scarrer</button>
+
+  <script>
+        function vortex(){
+            const b1 = document.getElementById("bo-1");
+            const b2 = document.getElementById("bo-2");
+            const b3 = document.getElementById("bo-3");
+            const b4 = document.getElementById("bo-4");
+
+            if (b1.style.right === '-250px'){
+                b1.style.right = "-150px";
+                b1.style.backgroundColor = "white";
+                b2.style.left = "50px";
+                b3.style.top = "0px";
+                b4.style.bottom = "0px";
+                b1.style.borderRadius = "0";
+                b2.style.borderRadius = "0";
+                b3.style.borderRadius = "0";
+                b4.style.borderRadius = "0";
+                b1.style.rotate = "360deg";
+                b2.style.rotate = "-360deg";
+                b3.style.rotate = "360deg";
+                b4.style.rotate = "-360deg";
+                b1.style.transition = "0.5s ease-out";
+                b2.style.transition = "0.5s ease-out";
+                b3.style.transition = "0.5s ease-out";
+                b4.style.transition = "0.5s ease-out";
+
+            }else{
+                b1.style.right = "-250px";
+                b2.style.left = "-50px";
+                b3.style.top = "-100px";
+                b4.style.bottom = "-100px";
+                b1.style.backgroundColor = "orange";
+                // b1.style.borderRadius = "100px";
+                // b2.style.borderRadius = "100px";
+                // b3.style.borderRadius = "100px";
+                // b4.style.borderRadius = "100px";
+                b1.style.rotate = "-315deg";
+                b2.style.rotate = "405deg";
+                b3.style.rotate = "-315deg";
+                b4.style.rotate = "405deg";
+                b1.style.transition = "0.5s ease-in";
+                b2.style.transition = "0.5s ease-in";
+                b3.style.transition = "0.5s ease-in";
+                b4.style.transition = "0.5s ease-in";
+            }
+
+        }
+        document.getElementById("x").addEventListener("click", vortex);
+  </script>
+   
+
+
+      
+<!-- 
+       <div class="box" id="box"></div>
+    <button id="btnbox">Click to change color</button>
+
+    <div class="box2" id="box2"></div>
+    <button id="btnbox2">Click Me</button> -->
+    </div>
+       
+    <script>
+        // function rotate(){
+        //     const boxs = document.getElementById("box2");
+
+        //     if (boxs.style.rotate === '180deg'){
+        //         boxs.style.rotate = "0deg";
+        //         boxs.style.transition = "0.5s linear";
+        //     }else{
+        //         boxs.style.rotate = "180deg";
+        //         boxs.style.transition = "0.5s linear";
+        //     }
+        // }
+        // document.getElementById("btnbox2").addEventListener("click", rotate);
+
+
+
+
+
+        // function color() {
+        //     const box = document.getElementById("box");
+           
+        //     if (box.style.backgroundColor === "blue") {
+        //         box.style.backgroundColor = "red";
+        //     } else {
+        //         box.style.backgroundColor = "blue";
+        //     }
+        // }
+
+        // document.getElementById("btnbox").addEventListener("click", color);
+
+
+
+
+
+
+
+
+ 
+
+       
+    </script>
+
+    <style>
+         .box3{
+            background: #7f5403;
+            height: 100px;
+            width: 100px;
+            rotate: 0deg;
+         }
+        .box2{
+            background: #607f03;
+            height: 100px;
+            width: 30px;
+            rotate: 0deg;
+
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #210166;
+            gap:12px;
+            padding: 15px;
+            color: white;
+
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            background: red;
+        }
+        button{
+            padding: 10px 40px;
+            border-radius: 12px;
+            border: 0;
+            background: orange;;
+        }
+    </style>
+</body>
+</html>
